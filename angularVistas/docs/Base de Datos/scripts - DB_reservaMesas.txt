@@ -1,0 +1,90 @@
+-- Database: DB_reservaMesas
+
+CREATE DATABASE "DB_reservaMesas"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Ecuador.1252'
+    LC_CTYPE = 'Spanish_Ecuador.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+
+-- CREACION TABLA persona
+
+create table persona(
+	pers_sec serial primary key,
+	pers_numero_identificacion varchar(11) not null,
+	pers_nombre varchar(150) not null,
+	pers_telefono varchar(10),
+	pers_correo varchar(150) not null,
+	pers_clave varchar(25) not null,
+	tipo_pers_sec integer
+)
+
+select * from persona
+
+
+-- CREACION TABLA tipo_persona
+
+create table tipo_persona(
+	tipo_pers_sec serial primary key,
+	tipo_nombre varchar(100)
+)
+
+
+select * from tipo_persona
+
+
+-- CREACION TABLA reserva
+
+create table reserva(
+	rese_sec serial primary key,
+	pers_sec integer
+)
+
+select * from reserva
+
+
+-- CREACION TABLA detalle_reserva
+
+create table detalle_reserva(
+	deta_sec serial primary key,
+	rese_sec integer,
+	mesa_sec integer,
+	esta_sec integer,
+	deta_fecha date,
+	deta_numero_usuarios integer
+)
+
+select * from detalle_reserva
+
+-- CREACION TABLA estado
+
+create table estado(
+	esta_sec serial primary key,
+	esta_nombre varchar(150)
+)
+
+select * from estado
+
+-- CREACION TABLA mesa
+
+create table mesa(
+	mesa_sec serial primary key,
+	tipo_sec integer,
+	mesa_nombre varchar(150)
+)
+
+select * from mesa
+
+-- CREACION TABLA tipo_mesa
+
+create table tipo_mesa(
+	tipo_sec serial primary key,
+	tipo_descripcion varchar(1500),
+	tipo_capacidad integer,
+	tipo_precio integer
+)
+
+select * from tipo_mesa
