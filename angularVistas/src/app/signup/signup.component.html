@@ -1,0 +1,31 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img class="row justify-content-md-center" src="assets/images/descarga.png" width="150px" />
+            <h1>Ingrese sus datos</h1>
+            <form role="form" method='POST' action="../controladores/insertarUsuario.php" >
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg" name="name" placeholder="Apellidos y Nombres" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg" name="phone" placeholder="Teléfono/Celular +593"required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-control input-underline input-lg" name="email" placeholder="Correo Electrónico" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg" name="password" placeholder="Contraseña" required>
+                    </div>
+  
+                </div>
+                <input type="submit"  class="form-submit" value="Registrarse" (click)="insertarPerson()" [routerLink]="['/login']"/>&nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/dashboard']" class="form-submit"  (click)="onLoggedin()">Inicio </a>
+                <hr>
+            </form>
+        </div>
+    </div>
+</div>
