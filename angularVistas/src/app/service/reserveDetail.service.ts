@@ -10,7 +10,7 @@ export class ReserveDateailService {
   constructor(private http: HttpClient) { }
 
   addReserveD(data: any) {
-    const url = environment.API_URL + 'reserve_detail';
+    const url = environment.API_URL + 'reservedetail';
     console.log(data);
     return this.http.post(url,JSON.stringify(data));
   }
