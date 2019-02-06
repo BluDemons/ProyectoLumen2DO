@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
-
-import { PersonService } from '../service/person.service';
+import { ServicesService } from '../service/services.service';
 import { Person } from '../models/person';
 
 @Component({
@@ -11,21 +10,60 @@ import { Person } from '../models/person';
     styleUrls: ['./signup.component.scss'],
     animations: [routerTransition()]
 })
-export class SignupComponent implements OnInit {  
+export class SignupComponent implements OnInit {
+    person : Person;
+  people : Array<Person>;
+
+  constructor(private service: ServicesService) { }
+
+  ngOnInit() {
+    this.get();
+    this.person = new Person();
+  }
+
+  get() {
+    this.service.get('person').subscribe(
+      response => {
+        this.people = response as Array<Person>;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  } 
+
+  post(){
+    this.service.post('person',this.person).subscribe(
+      response => {
+        this.get();
+      },
+      error => {
+        console.log(error);
+      }
       
-    person: Person;
-    
-    constructor(public router: Router, private PersonService: PersonService) {}
-
-    addPerson(data) {
-        this.PersonService.addPerson(data).subscribe(
-            response => {
-                console.log(response);
-            }
-        )
-    }
-
-    ngOnInit() {
-        this.person = new Person();
-    }
+    );
+  }
+  put(person:Person){
+    this.service.put('person',person).subscribe(
+      response => {
+        this.get();
+      },
+      error => {
+        console.log(error);
+      }
+      
+    );
+  }
+  delete(person:Person){
+    this.service.delete('person',person).subscribe(
+      response => {
+        this.get();
+      },
+      error => {
+        console.log(error);
+      }
+      
+    );
+  }
+  
 }

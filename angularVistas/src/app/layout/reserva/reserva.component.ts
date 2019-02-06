@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-import { ReserveService } from '../../service/reserve.service';
+import { ServicesService } from '../../service/services.service';
 import { Reserve } from '../../models/reserve';
 
 @Component({
@@ -10,21 +10,59 @@ import { Reserve } from '../../models/reserve';
     animations: [routerTransition()]
 })
 export class ReservaComponent implements OnInit {
-    reserva: Reserve;
-    constructor(private ReservaService: ReserveService
-        ) { }
- 
-   
- addReserva(data) {
-    this.ReservaService.addReserve(data).subscribe(
-   response => {
-             console.log(response);
+    reserve: Reserve;
+    reserves: Array<Reserve>;
+
+    constructor(private service: ServicesService) { }
+
+    ngOnInit() {
+        this.get();
+        this.reserve = new Reserve();
+    }
+
+
+    get() {
+        this.service.get('reserve').subscribe(
+            response => {
+                this.reserves = response as Array<Reserve>;
+            },
+            error => {
+                console.log(error);
             }
-         )
-       };
+        );
+    }
 
+    post() {
+        this.service.post('reserve', this.reserve).subscribe(
+            response => {
+                this.get();
+            },
+            error => {
+                console.log(error);
+            }
 
-         ngOnInit() {
-      this.reserva = new Reserve();
+        );
+    }
+    put(reserve: Reserve) {
+        this.service.put('reserve', this.reserve).subscribe(
+            response => {
+                this.get();
+            },
+            error => {
+                console.log(error);
+            }
+
+        );
+    }
+    delete(reserve: Reserve) {
+        this.service.delete('reserve', this.reserve).subscribe(
+            response => {
+                this.get();
+            },
+            error => {
+                console.log(error);
+            }
+
+        );
     }
 }
