@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Horario extends Model
+class Seat extends Model
 {
     protected $fillable = [
-        'hora'
+        'numeroAsiento', 'bus_id'
     ];
 }

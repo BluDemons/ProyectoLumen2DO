@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mesa extends Model
+class Reserve extends Model
 {
     protected $fillable = [
-        'nombre', 'estado'
+        'fechaRserva', 'person_id', 'travel_id'
     ];
 }

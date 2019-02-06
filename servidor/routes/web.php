@@ -15,36 +15,46 @@ $router->get('/', function () use ($router) {
     return $router -> app -> version();
 });
 
-//person    OK
+//person
+$router->get('/person', ['uses' => 'PersonController@traerPerson']);
 $router->post('/person', ['uses' => 'PersonController@crearPerson']);
 $router->put('/person', ['uses' => 'PersonController@actualizarPerson']);
 $router->delete('/person', ['uses' => 'ReservaController@eliminarPerson']);
-$router->get('/person', ['uses' => 'PersonController@traerPersons']);
 
 
-//reserva   OK
-$router->post('/reserva', ['uses' => 'ReservaController@crearReserva']);
-$router->put('/reserva', ['uses' => 'ReservaController@actualizarReserva']);
-$router->delete('/reserva', ['uses' => 'ReservaController@eliminarReserva']);
-$router->get('/reserva', ['uses' => 'ReservaController@traerReservas']);
+
+//reserve
+$router->get('/reserve', ['uses' => 'ReserveController@traerReserve']);
+$router->post('/reserve', ['uses' => 'ReserveController@crearReserve']);
+$router->put('/reserve', ['uses' => 'ReserveController@actualizarReserve']);
+$router->delete('/reserve', ['uses' => 'ReserveController@eliminarReserve']);
 
 
-//detalle_reserva   OK
-$router->post('/detalle_reserva', ['uses' => 'Detalle_reservaController@crearDetalle_reserva']);
-$router->put('/detalle_reserva', ['uses' => 'Detalle_reservaController@actualizarDetalle_reserva']);
-$router->delete('/detalle_reserva', ['uses' => 'Detalle_reservaController@eliminarDetalle_reserva']);
-$router->get('/detalle_reserva', ['uses' => 'Detalle_reservaController@traerDetalle_reservas']);
+
+//reservedetail
+$router->get('/reservedetail', ['uses' => 'ReserveDetailController@traerReserveDetail']);
+$router->post('/reservedetail', ['uses' => 'ReserveDetailController@crearReserveDetail']);
+$router->put('/reservedetail', ['uses' => 'ReserveDetailController@actualizarReserveDetail']);
+$router->delete('/reservedetail', ['uses' => 'ReserveDetailController@eliminarReserveDetail']);
 
 
-//mesa  OK
-$router->post('/mesa', ['uses' => 'MesaController@crearMesa']);
-$router->put('/mesa', ['uses' => 'MesaController@actualizarMesa']);
-$router->delete('/mesa', ['uses' => 'MesaController@eliminarMesa']);
-$router->get('/mesa', ['uses' => 'MesaController@traerMesas']);
+
+//bus 
+$router->get('/bus', ['uses' => 'BusController@traerBus']);
+$router->post('/bus', ['uses' => 'BusController@crearBus']);
+$router->put('/bus', ['uses' => 'BusController@actualizarBus']);
+$router->delete('/bus', ['uses' => 'BusController@eliminarBus']);
 
 
-//horario
-$router->post('/horario', ['uses' => 'HorarioController@crearHorario']);
-$router->put('/horario', ['uses' => 'HorarioController@actualizarHorario']);
-$router->delete('/horario', ['uses' => 'HorarioController@eliminarHorario']);
-$router->get('/horario', ['uses' => 'HorarioController@traerHorarios']);
+// seat
+$router->get('/seat', ['uses' => 'SeatController@traerSeat']);
+$router->post('/seat', ['uses' => 'SeatController@crearSeat']);
+$router->put('/seat', ['uses' => 'SeatController@actualizarSeat']);
+$router->delete('/seat', ['uses' => 'SeatController@eliminarSeat']);
+
+
+// travel
+$router->get('/travel', ['uses' => 'TravelController@traerTravel']);
+$router->post('/travel', ['uses' => 'TravelController@crearTravel']);
+$router->put('/travel', ['uses' => 'TravelController@actualizarTravel']);
+$router->delete('/travel', ['uses' => 'TravelController@eliminarTravel']);
