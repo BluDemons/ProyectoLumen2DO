@@ -10,13 +10,13 @@
   <hr>
   <div>
     <div>
-        <h1>ASIENTOS</h1>
-        <form class="auto-style1">
-            <th>
+        <h3 >ASIENTOS</h3>
+        <form style="margin-left: 60px" class="auto-style1">
+            
             <tr >
                 <td class="auto-style3">A</td>
                 <td class="auto-style14">
-                    <img  type="radio" value="1"alt="" src="../assets/images/05.jpg" style="height: 29px; width: 35px" /></td>
+                    1<img  type="radio" value="1"alt="" src="../assets/images/05.jpg" style="height: 29px; width: 35px" /></td>
                 <td class="auto-style15">
                     2<img alt="" src="../assets/images/05.jpg" style="height: 29px; width: 35px" /></td>
                 <td class="auto-style15">
@@ -59,7 +59,7 @@
              <tr >
                 <td class="auto-style3">D</td>
                 <td class="auto-style14">
-                    13<img alt="" src="../assets/images/05.jpg" style="height: 25px; width: 34px" /></td>
+                    13<img alt="" src="../assets/images/05.jpg"  style="height: 25px; width: 34px" /></td>
                 <td class="auto-style14">
                     14<img alt="" src="../assets/images/05.jpg" style="height: 25px; width: 34px" /></td>
                 <td class="auto-style14">
@@ -69,37 +69,76 @@
                     16<img alt="" src="../assets/images/05.jpg" style="height: 25px; width: 34px" /></td>
                 <td class="auto-style14">
                   </td>
-             </tr> 
-            </th>          
+             </tr>  
+            
+                   
             </form>
-
-
-            &nbsp;
-                  </div>
-              <form role="form">
-               <th>
-               <div style="margin-left: 60px">Fecha Del Viaje</div>
-               <div style="margin-left: 60px">
-             <input class="form-control" type="date" name="fecha">
-          </div>
-
-
-      </th>
-
-      &nbsp;
-      &nbsp;
+            
+            &nbsp;  
+    </div>
+    &nbsp;
+    <form role="form">
       <th>
-            &nbsp;
+            <div style="margin-left: 20px">Destinos</div>
+            <div style="margin-left: 20px">
+       <select class="form-control">
+            <option value="1">Esmeraldas</option>
+            <option value="2">El Oro</option>
+            <option value="3">Guayas</option>
+            <option value="4">Los Ríos</option>
+            <option value="5">Santa Elena</option>
+            <option value="5">Santo Domingo de los Tsáchilas</option>
+     </select>
+    </div>
+    &nbsp;
+    <div style="margin-left: 20px">Cuantos asientos desea reservar? </div>
+    <div style="margin-left: 20px">
+<select class="form-control">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="5">6</option>
+    <option value="5">7</option>
+    <option value="5">8</option>
+    <option value="5">9</option>
+    <option value="5">10</option>
+    <option value="5">11</option>
+    <option value="5">12</option>
+    <option value="5">13</option>
+    <option value="5">14</option>
+    <option value="5">15</option>
+    <option value="5">16</option>
 
+</select>
+</div>
+&nbsp;
+        <div style="margin-left: 60px">Fecha De Reserva</div>
+        <div style="margin-left: 60px">
+        <input class="form-control" type="date" name="fecha">
+        </div>
 
+      
+        <div style="margin-left: 60px">Fecha De Salida</div>
+        <div style="margin-left: 60px">
+          <input class="form-control" type="date" name="fecha">
+        </div>
+    </th>
+        &nbsp;
+  
+   <th>
       <div class="col-12">
           <br>
           <br>
           <br>
           &nbsp;
           &nbsp;
-       
+          &nbsp;
+          &nbsp;
+          &nbsp;
           <input type="submit" class="btn rounded-btn" value="Reservar" [routerLink]="['/dashboard']" />
+       
         </div>
         </th>
     </form>
