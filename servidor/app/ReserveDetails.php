@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Travel extends Model
+class ReserveDetails extends Model
 {
     protected $fillable = [
-        'name','fechaSalida'
+        'seat_id', 'reserve_id'
     ];
 }

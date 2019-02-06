@@ -14,9 +14,9 @@ class CreateTravelsTable extends Migration
     public function up()
     {
         Schema::create('travels', function (Blueprint $table) {
-            $table-> increments('id');
-            $table-> string('name');
-            $table-> string('fechaSalida');
+            $table->increments('id');
+            $table->string('name');
+            $table->string('fechaSalida');
         });
     }
 

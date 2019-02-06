@@ -1,42 +1,42 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Travel;
+use App\Buses;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
 
-class TravelController extends Controller
+class BusesController extends Controller
 {
-    public function crearTravel(Request $request)
+    public function crearBus(Request $request)
     {
         $data = $request -> json() -> all();
-        $sql = "insert into travels(name, fechaSalida) values(?,?)";
-        $parameters = [$data['name'], $data['fechaSalida']];
+        $sql = "insert into buses(name, state, travel_id) values(?,?,?)";
+        $parameters = [$data['name'], $data['state'], $data['travel_id']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
 
-    public function actualizarTravel(Request $request)
+    public function actualizarBus(Request $request)
      { 
         $data = $request -> json() -> all();
-        $sql = "update travels set name = ?, fechaSalida = ?";
-        $parameters = [$data['name'], $data['fechaSalida']];
+        $sql = "update buses set name = ?, state = ?, travel_id = ?";
+        $parameters = [$data['name'], $data['state'], $data['travel_id']];
         $response = DB::select($sql, $parameters);
         return $response;
      }
 
-    public function eliminarTravel(Request $request){
+    public function eliminarBus(Request $request){
         $data = $request -> json() -> all();
-        $sql = "delete from travels where id = ?";
+        $sql = "delete from buses where id = ?";
         $parameters = [$data['id']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
 
-    public function traerTravel(Request $request)
+    public function traerBus(Request $request)
     {
         $data = $request->json()->all();
-        $sql = "select * from travels";
+        $sql = "select * from buses";
         $response = DB::select($sql);
         return $response;
 

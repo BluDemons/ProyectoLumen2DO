@@ -14,10 +14,10 @@ class CreateBusesTable extends Migration
     public function up()
     {
         Schema::create('buses', function (Blueprint $table) {
-            $table-> increments('id');
-            $table-> string('name');
-            $table-> boolean('state');
-            $table-> integer('travel_id');
+            $table->increments('id');
+            $table->string('name');
+            $table->boolean('state');
+            $table->integer('travel_id');
             $table-> foreign('travel_id')->references('id')->on('travels');
 
         });

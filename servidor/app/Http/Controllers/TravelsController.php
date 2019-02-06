@@ -1,42 +1,42 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\ReserveDetail;
+use App\Travels;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
 
-class ReserveDetailController extends Controller
+class TravelsController extends Controller
 {
-    public function crearReserveDetail(Request $request)
+    public function crearTravel(Request $request)
     {
         $data = $request -> json() -> all();
-        $sql = "insert into reserve_details(seat_id, reserve_id) values(?,?)";
-        $parameters = [$data['seat_id'], $data['reserve_id']];
+        $sql = "insert into travels(name, fechaSalida) values(?,?)";
+        $parameters = [$data['name'], $data['fechaSalida']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
 
-    public function actualizarReserveDetail(Request $request)
+    public function actualizarTravel(Request $request)
      { 
         $data = $request -> json() -> all();
-        $sql = "update reserve_details set seat_id = ?, reserve_id = ?";
-        $parameters = [$data['seat_id'], $data['reserve_id']];
+        $sql = "update travels set name = ?, fechaSalida = ?";
+        $parameters = [$data['name'], $data['fechaSalida']];
         $response = DB::select($sql, $parameters);
         return $response;
      }
 
-    public function eliminarReserveDetail(Request $request){
+    public function eliminarTravel(Request $request){
         $data = $request -> json() -> all();
-        $sql = "delete from reserve_details where id = ?";
+        $sql = "delete from travels where id = ?";
         $parameters = [$data['id']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
 
-    public function traerReserveDetail(Request $request)
+    public function traerTravel(Request $request)
     {
         $data = $request->json()->all();
-        $sql = "select * from reserve_details";
+        $sql = "select * from travels";
         $response = DB::select($sql);
         return $response;
 

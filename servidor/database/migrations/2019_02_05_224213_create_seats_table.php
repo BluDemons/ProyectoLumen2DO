@@ -14,10 +14,10 @@ class CreateSeatsTable extends Migration
     public function up()
     {
         Schema::create('seats', function (Blueprint $table) {
-            $table-> increments('id');
-            $table-> integer('numeroAsiento');
-            $table-> integer('bus_id');
-            $table-> foreign('bus_id')->references('id')->on('buses');
+            $table->increments('id');
+            $table->integer('numeroAsiento');
+            $table->integer('bus_id');
+            $table->foreign('bus_id')->references('id')->on('buses');
         });
     }
 

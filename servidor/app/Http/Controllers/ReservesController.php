@@ -1,11 +1,11 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Reserve;
+use App\Reserves;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
 
-class ReserveController extends Controller
+class ReservesController extends Controller
 {
     public function crearReserve(Request $request)
     {
