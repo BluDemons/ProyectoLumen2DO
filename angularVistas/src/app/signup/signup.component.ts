@@ -1,20 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
+
+import { PersonService } from '../service/person.service';
+import { Person } from '../models/person';
+
 @Component({
     selector: 'app-signup',
     templateUrl: './signup.component.html',
     styleUrls: ['./signup.component.scss'],
     animations: [routerTransition()]
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent implements OnInit {  
+      
+    person: Person;
+    
+    constructor(public router: Router, private PersonService: PersonService) {}
 
-    constructor( public router: Router) { }
-   
-   
-    ngOnInit() {
+    addPerson(data) {
+        this.PersonService.addPerson(data).subscribe(
+            response => {
+                console.log(response);
+            }
+        )
     }
-    onLoggedin() {
-        localStorage.setItem('isLoggedin', 'true');
+
+    ngOnInit() {
+        this.person = new Person();
     }
 }

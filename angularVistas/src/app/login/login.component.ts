@@ -11,7 +11,10 @@ import { from } from 'rxjs';
     animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
-
+public form ={
+    email:null,
+    password:null,
+};
     constructor( public router: Router) { }
     
 

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalendarModule } from 'primeng/calendar';
+import { FormsModule } from '@angular/forms';
 
 import { ReservaRoutingModule } from './reserva-routing.module';
 import { ReservaComponent } from './reserva.component';
@@ -9,7 +10,8 @@ import { ReservaComponent } from './reserva.component';
     imports: [
       CommonModule,
       ReservaRoutingModule,
-      CalendarModule
+      CalendarModule,
+      FormsModule
     ],
     declarations: [ReservaComponent]
 })

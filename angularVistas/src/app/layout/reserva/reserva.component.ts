@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { ReserveService } from '../../service/reserve.service';
+import { Reserve } from '../../models/reserve';
 
 @Component({
     selector: 'app-reserva',
@@ -8,22 +10,21 @@ import { routerTransition } from '../../router.animations';
     animations: [routerTransition()]
 })
 export class ReservaComponent implements OnInit {
-  nombre = '';
-  prioridad = '';
-  date = '';
-  texto = '';
-  lista = '';
-  Seleccione = '';
-  create: any;
-  busy: Promise<any>;
-  entidadSeleccionada: any;
-  Seleccionada: number;
-  constructor( ) { }
-  estaSeleccionado(porVerificar): boolean {
-    if (this.entidadSeleccionada == null) {
-        return false;
+    reserva: Reserve;
+    constructor(private ReservaService: ReserveService
+        ) { }
+ 
+   
+ addReserva(data) {
+    this.ReservaService.addReserve(data).subscribe(
+   response => {
+             console.log(response);
+            }
+         )
+       };
+
+
+         ngOnInit() {
+      this.reserva = new Reserve();
     }
-    return porVerificar.id === this.entidadSeleccionada.id;
-}
-    ngOnInit() {}
 }
