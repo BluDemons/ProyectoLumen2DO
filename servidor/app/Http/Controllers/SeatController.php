@@ -1,42 +1,42 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Horario;
+use App\Seat;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
 
-class HorarioController extends Controller
+class SeatController extends Controller
 {
-    public function crearHorario(Request $request)
+    public function crearSeat(Request $request)
     {
         $data = $request -> json() -> all();
-        $sql = "insert into horario(hora) values(?)";
+        $sql = "insert into seats(numeroAsiento, bus_id) values(?,?)";
         $parameters = [$data['hora']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
 
-    public function actualizarHorario(Request $request)
+    public function actualizarSeat(Request $request)
      { 
         $data = $request -> json() -> all();
-        $sql = "update horario set hora = ?";
-        $parameters = [$data['hora']];
+        $sql = "update seats set numeroAsiento = ?, bus_id = ?";
+        $parameters = [$data['numeroAsiento'],$data['bus_id']];
         $response = DB::select($sql, $parameters);
         return $response;
      }
 
-    public function eliminarHorario(Request $request){
+    public function eliminarSeat(Request $request){
         $data = $request -> json() -> all();
-        $sql = "delete from horario where horario_id = ?";
-        $parameters = [$data['horario_id']];
+        $sql = "delete from seats where id = ?";
+        $parameters = [$data['id']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
 
-    public function traerHorarios(Request $request)
+    public function traerSeat(Request $request)
     {
         $data = $request->json()->all();
-        $sql = "select * from horario";
+        $sql = "select * from seats";
         $response = DB::select($sql);
         return $response;
 

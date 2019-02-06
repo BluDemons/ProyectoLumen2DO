@@ -1,42 +1,42 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Mesa;
+use App\Travel;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\DB;
 
-class MesaController extends Controller
+class TravelController extends Controller
 {
-    public function crearMesa(Request $request)
+    public function crearTravel(Request $request)
     {
         $data = $request -> json() -> all();
-        $sql = "insert into mesa(nombre, estado) values(?,?)";
-        $parameters = [$data['nombre'], $data['estado']];
+        $sql = "insert into travels(name, fechaSalida) values(?,?)";
+        $parameters = [$data['name'], $data['fechaSalida']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
 
-    public function actualizarMesa(Request $request)
+    public function actualizarTravel(Request $request)
      { 
         $data = $request -> json() -> all();
-        $sql = "update mesa set nombre = ?, estado = ?";
-        $parameters = [$data['nombre'], $data['estado']];
+        $sql = "update travels set name = ?, fechaSalida = ?";
+        $parameters = [$data['name'], $data['fechaSalida']];
         $response = DB::select($sql, $parameters);
         return $response;
      }
 
-    public function eliminarMesa(Request $request){
+    public function eliminarTravel(Request $request){
         $data = $request -> json() -> all();
-        $sql = "delete from mesa where mesa_id = ?";
-        $parameters = [$data['mesa_id']];
+        $sql = "delete from travels where id = ?";
+        $parameters = [$data['id']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
 
-    public function traerMesas(Request $request)
+    public function traerTravel(Request $request)
     {
         $data = $request->json()->all();
-        $sql = "select * from mesa";
+        $sql = "select * from travels";
         $response = DB::select($sql);
         return $response;
 

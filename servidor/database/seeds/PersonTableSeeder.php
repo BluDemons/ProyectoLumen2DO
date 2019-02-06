@@ -13,7 +13,7 @@ class PersonTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('person') -> insert([
+        DB::table('persons') -> insert([
             'ci' => '171884264-2',
             'name' => 'Johao Perlaza',
             'phone' => '0978970998',
