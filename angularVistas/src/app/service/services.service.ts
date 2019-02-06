@@ -25,9 +25,9 @@ export class ServicesService {
   delete(url:string,data:any){
     return this.http.delete(environment.API_URL+url,data);
   };
-  login(username:string, password:string) {
+  login(email:string, password:string) {
     return this.http.post('https://reqres.in/api/login', {
-      email: username,
+      email: email,
       password: password,     
     });     
   }
