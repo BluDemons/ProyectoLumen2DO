@@ -16,8 +16,8 @@ class CreateSeatsTable extends Migration
         Schema::create('seats', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('numeroAsiento');
-            $table->integer('bus_id');
-            $table->foreign('bus_id')->references('id')->on('buses');
+            // $table->integer('bus_id');
+            // $table->foreign('bus_id')->references('id')->on('buses');
         });
     }
 

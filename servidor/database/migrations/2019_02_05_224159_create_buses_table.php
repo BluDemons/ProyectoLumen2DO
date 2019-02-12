@@ -17,9 +17,8 @@ class CreateBusesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->boolean('state');
-            $table->integer('travel_id');
-            $table-> foreign('travel_id')->references('id')->on('travels');
-
+            // $table->integer('travel_id');
+            // $table-> foreign('travel_id')->references('id')->on('travels');
         });
     }
 

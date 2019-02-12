@@ -10,8 +10,8 @@ class TravelsController extends Controller
     public function crearTravel(Request $request)
     {
         $data = $request -> json() -> all();
-        $sql = "insert into travels(name, fechaSalida) values(?,?)";
-        $parameters = [$data['name'], $data['fechaSalida']];
+        $sql = "insert into travels(name) values(?)";
+        $parameters = [$data['name']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
@@ -19,8 +19,8 @@ class TravelsController extends Controller
     public function actualizarTravel(Request $request)
      { 
         $data = $request -> json() -> all();
-        $sql = "update travels set name = ?, fechaSalida = ?";
-        $parameters = [$data['name'], $data['fechaSalida']];
+        $sql = "update travels set name = ?";
+        $parameters = [$data['name']];
         $response = DB::select($sql, $parameters);
         return $response;
      }

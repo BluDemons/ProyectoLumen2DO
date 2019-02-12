@@ -11,7 +11,7 @@ import { Person } from '../models/person';
 })
 export class SignupComponent implements OnInit {
     person : Person;
-  people : Array<Person>;
+    people : Array<Person>;
 
   constructor(private service: ServicesService) { }
 

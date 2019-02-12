@@ -16,10 +16,10 @@ public form ={
 };
     constructor( public router: Router, private servicesService:ServicesService) { }
     
-
+    
    
     ngOnInit() { 
-        this.servicesService.login('peter@klaven', 'cityslicka').subscribe(
+        this.servicesService.login('email', 'password').subscribe(
             res => {
               console.log(res);      
           });

@@ -16,10 +16,10 @@ class CreateReservesTable extends Migration
         Schema::create('reserves', function (Blueprint $table) {
             $table->increments('id');
             $table->string('fechaReserva');
-            $table->integer('person_id');
-            $table->foreign('person_id')->references('id')->on('persons');
-            $table->integer('travel_id');
-            $table->foreign('travel_id')->references('id')->on('travels');
+            // $table->integer('person_id');
+            // $table->foreign('person_id')->references('id')->on('persons');
+            // $table->integer('travel_id');
+            // $table->foreign('travel_id')->references('id')->on('travels');
         });
     }
 
