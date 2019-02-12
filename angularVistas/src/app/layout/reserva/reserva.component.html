@@ -82,52 +82,32 @@
             <div style="margin-left: 20px">Destinos</div>
             <div style="margin-left: 20px">
        <select class="form-control">
-            <option value="1">Esmeraldas</option>
-            <option value="2">El Oro</option>
-            <option value="3">Guayas</option>
-            <option value="4">Los Ríos</option>
-            <option value="5">Santa Elena</option>
-            <option value="5">Santo Domingo de los Tsáchilas</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>    
      </select>
+     <div>
+        <h6>1.-Esmeraldas</h6>
+        <h6>2.-Manabí</h6>
+        <h6>3.-Santa Elena</h6>
+        <h6>4.-Guayas</h6>
+        <h6>5.-El Oro</h6>
+        <h6>6.-Los Ríos</h6>
     </div>
-    &nbsp;
-    <div style="margin-left: 20px">Cuantos asientos desea reservar? </div>
-    <div style="margin-left: 20px">
-<select class="form-control">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="5">6</option>
-    <option value="5">7</option>
-    <option value="5">8</option>
-    <option value="5">9</option>
-    <option value="5">10</option>
-    <option value="5">11</option>
-    <option value="5">12</option>
-    <option value="5">13</option>
-    <option value="5">14</option>
-    <option value="5">15</option>
-    <option value="5">16</option>
 
-</select>
-</div>
+    </div>
 &nbsp;
         <div style="margin-left: 60px">Fecha De Reserva</div>
         <div style="margin-left: 60px">
         <input class="form-control" type="date" name="fecha">
         </div>
-
-      
-        <div style="margin-left: 60px">Fecha De Salida</div>
-        <div style="margin-left: 60px">
-          <input class="form-control" type="date" name="fecha">
-        </div>
     </th>
         &nbsp;
-  
-   <th>
+        
+            <th>
       <div class="col-12">
           <br>
           <br>
@@ -137,7 +117,7 @@
           &nbsp;
           &nbsp;
           &nbsp;
-          <input type="submit" class="btn rounded-btn" value="Reservar" (click)="addReserva(data)" [routerLink]="['/dashboard']" />
+          <input type="submit" class="btn rounded-btn" (click)="post(reserve)" value="Reservar" (click)="addReserva(data)" [routerLink]="['/dashboard']" />
        
         </div>
         </th>

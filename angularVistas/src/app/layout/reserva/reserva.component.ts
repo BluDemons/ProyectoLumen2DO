@@ -10,6 +10,7 @@ import { Reserve } from '../../models/reserve';
     animations: [routerTransition()]
 })
 export class ReservaComponent implements OnInit {
+    
     reserve: Reserve;
     reserves: Array<Reserve>;
 
