@@ -10,8 +10,8 @@ class ReservesController extends Controller
     public function crearReserve(Request $request)
     {
         $data = $request -> json() -> all();
-        $sql = "insert into reserves(fechaReserva, person_id, travel_id) values(?,?,?)";
-        $parameters = [$data['fechaReserva'], $data['person_id'], $data['travel_id']];
+        $sql = "insert into reserves(fechaReserva, per_ci, travel_id, bus_id, seat_id) values(?,?,?,?,?)";
+        $parameters = [$data['fechaReserva'], $data['per_ci'], $data['travel_id'], $data['bus_id'], $data['seat_id']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
@@ -20,7 +20,7 @@ class ReservesController extends Controller
      { 
         $data = $request -> json() -> all();
         $sql = "update reserves set fechaReserva = ?, person_id = ?, travel_id = ?";
-        $parameters = [$data['fechaReserva'], $data['person_id'], $data['travel_id']];
+        $parameters = [$data['fechaReserva'], $data['per_ci'], $data['travel_id'], $data['bus_id'], $data['seat_id']];
         $response = DB::select($sql, $parameters);
         return $response;
      }

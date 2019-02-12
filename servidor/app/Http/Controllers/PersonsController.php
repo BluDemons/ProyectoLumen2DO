@@ -10,8 +10,8 @@ class PersonsController extends Controller
     public function createPerson(Request $request)
     {
         $data = $request -> json() -> all();
-        $sql = "insert into persons(ci, name, phone, email, password) values(?,?,?,?,?)";
-        $parameters = [$data['ci'], $data['name'], $data['phone'], $data['email'], $data['password']];
+        $sql = "insert into persons(per_ci, name, phone, email) values(?,?,?,?)";
+        $parameters = [$data['per_ci'], $data['name'], $data['phone'], $data['email']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
@@ -19,16 +19,16 @@ class PersonsController extends Controller
     public function updatePerson(Request $request)
      { 
         $data = $request -> json() -> all();
-        $sql = "update persons set ci = ?, name = ?, phone = ?, email = ?, password = ?";
-        $parameters =[$data['ci'], $data['name'], $data['phone'], $data['email'], $data['password']];
+        $sql = "update persons set per_ci = ?, name = ?, phone = ?, email = ?";
+        $parameters =[$data['per_ci'], $data['name'], $data['phone'], $data['email']];
         $response = DB::select($sql, $parameters);
         return $response;
      }
 
     public function deletePerson(Request $request){
         $data = $request -> json() -> all();
-        $sql = "delete from persons where id = ?";
-        $parameters = [$data['id']];
+        $sql = "delete from persons where per_ci = ?";
+        $parameters = [$data['per_ci']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
@@ -48,11 +48,10 @@ class PersonsController extends Controller
         $data = $request->json()->all();
 
         $person  = Persons::all([
-            $data['ci'],
+            $data['per_ci'],
             $data['name'],
             $data['phone'],
             $data['email'],
-            $data['password']
         ]);
             DB::commit(); 
         }

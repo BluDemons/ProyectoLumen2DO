@@ -31,12 +31,6 @@ $router->delete('/reserve', ['uses' => 'ReservesController@eliminarReserve']);
 
 
 
-//reservedetail
-$router->get('/reservedetail', ['uses' => 'ReserveDetailsController@traerReserveDetail']);
-$router->post('/reservedetail', ['uses' => 'ReserveDetailsController@crearReserveDetail']);
-$router->put('/reservedetail', ['uses' => 'ReserveDetailsController@actualizarReserveDetail']);
-$router->delete('/reservedetail', ['uses' => 'ReserveDetailsController@eliminarReserveDetail']);
-
 
 
 //bus 
@@ -47,14 +41,14 @@ $router->delete('/bus', ['uses' => 'BusesController@eliminarBus']);
 
 
 // seat
-$router->get('/seat', ['uses' => 'SeatController@traerSeat']);
-$router->post('/seat', ['uses' => 'SeatController@crearSeat']);
-$router->put('/seat', ['uses' => 'SeatController@actualizarSeat']);
-$router->delete('/seat', ['uses' => 'SeatController@eliminarSeat']);
+$router->get('/seat', ['uses' => 'SeatsController@traerSeat']);
+$router->post('/seat', ['uses' => 'SeatsController@crearSeat']);
+$router->put('/seat', ['uses' => 'SeatsController@actualizarSeat']);
+$router->delete('/seat', ['uses' => 'SeatsController@eliminarSeat']);
 
 
 // travel
-$router->get('/travel', ['uses' => 'TravelController@traerTravel']);
-$router->post('/travel', ['uses' => 'TravelController@crearTravel']);
-$router->put('/travel', ['uses' => 'TravelController@actualizarTravel']);
-$router->delete('/travel', ['uses' => 'TravelController@eliminarTravel']);
+$router->get('/travel', ['uses' => 'TravelsController@traerTravel']);
+$router->post('/travel', ['uses' => 'TravelsController@crearTravel']);
+$router->put('/travel', ['uses' => 'TravelsController@actualizarTravel']);
+$router->delete('/travel', ['uses' => 'TravelsController@eliminarTravel']);

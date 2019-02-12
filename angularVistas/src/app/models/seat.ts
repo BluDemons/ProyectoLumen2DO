@@ -1,9 +1,7 @@
 export class Seat{
     
-    id: number;
+    seat_id: number;
     numeroAsiento: number;
-    bus_id: number;
-
     constructor(){
     }
 }

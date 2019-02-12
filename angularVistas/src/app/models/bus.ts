@@ -1,10 +1,8 @@
 export class Reserve{
     
-    id: number;
+    bus_id: number;
     name:String;
     state: Boolean;
-    travel_id: number;
-    
     constructor(){
     }
 }

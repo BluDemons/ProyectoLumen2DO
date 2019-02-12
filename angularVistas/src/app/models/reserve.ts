@@ -1,10 +1,12 @@
 export class Reserve{
     
-    id: number;
+    reserve_id: number;
     fechaReserva: Date;
-    person_id: number;
+    per_ci: number;
     travel_id:number;
-    
+    bus_id:number;
+    seat_id:number;
+
     constructor(){
     }
 }
