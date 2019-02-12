@@ -19,7 +19,7 @@ class ReservesController extends Controller
     public function actualizarReserve(Request $request)
      { 
         $data = $request -> json() -> all();
-        $sql = "update reserves set fechaReserva = ?, person_id = ?, travel_id = ?";
+        $sql = "update reserves set fechaReserva = ?, per_ci = ?, travel_id = ?, bus_id = ?, seat_id = ?";
         $parameters = [$data['fechaReserva'], $data['per_ci'], $data['travel_id'], $data['bus_id'], $data['seat_id']];
         $response = DB::select($sql, $parameters);
         return $response;

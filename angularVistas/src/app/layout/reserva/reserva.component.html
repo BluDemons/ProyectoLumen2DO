@@ -78,7 +78,7 @@
             
             &nbsp;  
     </div>
-    
+    <form role="form" >
     &nbsp;
     <th>
     <div style="margin-left: 60px">Fecha De Reserva</div>
@@ -91,12 +91,12 @@
 <div>
     <div class="form-content">
       <div for="choose"> Cedula de Identidad </div>
-        <input id="choose" [(ngModel)]="reserve.per_ci" name="pers_ci" class="form-control" type="text" placeholder="Cedula de Identidad">
+        <input id="choose" [(ngModel)]="reserve.per_ci" name="per_ci" class="form-control" type="text" placeholder="Cedula de Identidad">
     </div>
   </div>
 </th>
 &nbsp;
-    <form role="form">
+    
       <th>
             <div style="margin-left: 20px">Destinos</div>
             <div style="margin-left: 20px">
@@ -118,9 +118,9 @@
     </div>
     </div>
 </th>
-</form>
+
     &nbsp;
-    <form role="form">
+    
         <th>
               <div style="margin-left: 20px">Buses</div>
               <div style="margin-left: 20px">
@@ -134,9 +134,9 @@
       </div>
       </div>
   </th>
-  </form>
+ 
   &nbsp;
-  <form role="form">
+  
     <th>
       <div style="margin-left: 20px">Asiento</div>
           <div style="margin-left: 20px">
@@ -171,7 +171,7 @@
           &nbsp;
           &nbsp;
           &nbsp;
-          <input type="submit" class="btn rounded-btn" (click)="post(reserve)" value="Reservar" (click)="addReserva(data)" [routerLink]="['/dashboard']" />
+          <input type="submit" class="btn rounded-btn" (click)="post(reserve)" value="Reservar"  [routerLink]="['/dashboard']" />
         </div>
   </div>
 </div>
