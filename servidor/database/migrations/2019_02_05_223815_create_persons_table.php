@@ -16,7 +16,7 @@ class CreatePersonsTable extends Migration
         Schema::create('persons', function (Blueprint $table) {
             $table->string('per_ci',20)->primary();
             $table->string('name',250);
-            $table->string('phone',10);
+            $table->string('phone',15);
             $table->string('email',250);
         });
     }

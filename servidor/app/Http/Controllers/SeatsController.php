@@ -10,8 +10,8 @@ class SeatsController extends Controller
     public function crearSeat(Request $request)
     {
         $data = $request -> json() -> all();
-        $sql = "insert into seats(numeroAsiento, bus_id) values(?,?)";
-        $parameters = [$data['hora']];
+        $sql = "insert into seats(number) values(?)";
+        $parameters = [$data['number']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
@@ -19,8 +19,8 @@ class SeatsController extends Controller
     public function actualizarSeat(Request $request)
      { 
         $data = $request -> json() -> all();
-        $sql = "update seats set numeroAsiento = ?, bus_id = ?";
-        $parameters = [$data['numeroAsiento'],$data['bus_id']];
+        $sql = "update seats set number = ?";
+        $parameters = [$data['number']];
         $response = DB::select($sql, $parameters);
         return $response;
      }
