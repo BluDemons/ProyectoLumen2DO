@@ -10,8 +10,8 @@ class BusesController extends Controller
     public function crearBus(Request $request)
     {
         $data = $request -> json() -> all();
-        $sql = "insert into buses(name, state, travel_id) values(?,?,?)";
-        $parameters = [$data['name'], $data['state'], $data['travel_id']];
+        $sql = "insert into buses(name, state) values(?,?)";
+        $parameters = [$data['name'], $data['state']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
@@ -19,8 +19,8 @@ class BusesController extends Controller
     public function actualizarBus(Request $request)
      { 
         $data = $request -> json() -> all();
-        $sql = "update buses set name = ?, state = ?, travel_id = ?";
-        $parameters = [$data['name'], $data['state'], $data['travel_id']];
+        $sql = "update buses set name = ?, state = ?";
+        $parameters = [$data['name'], $data['state']];
         $response = DB::select($sql, $parameters);
         return $response;
      }

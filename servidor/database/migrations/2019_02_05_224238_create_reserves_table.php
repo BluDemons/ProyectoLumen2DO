@@ -16,14 +16,14 @@ class CreateReservesTable extends Migration
         Schema::create('reserves', function (Blueprint $table) {
             $table->increments('reserve_id');
             $table->string('fechaReserva');
-             $table->string('per_ci');
+            $table->string('per_ci');
             $table->foreign('per_ci')->references('per_ci')->on('persons');
             $table->integer('travel_id');
-             $table->foreign('travel_id')->references('travel_id')->on('travels');
+            $table->foreign('travel_id')->references('id')->on('travels');
             $table->integer('bus_id');
-            $table->foreign('bus_id')->references('bus_id')->on('buses');
+            $table->foreign('bus_id')->references('id')->on('buses');
             $table->integer('seat_id');
-            $table->foreign('seat_id')->references('seat_id')->on('seats');
+            $table->foreign('seat_id')->references('id')->on('seats');
             });
     }
 
