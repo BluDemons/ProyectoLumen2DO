@@ -10,8 +10,8 @@ class ReservesController extends Controller
     public function crearReserve(Request $request)
     {
         $data = $request -> json() -> all();
-        $sql = "insert into reserves(fechaReserva, per_ci, travel_id, bus_id, seat_id) values(?,?,?,?,?)";
-        $parameters = [$data['fechaReserva'], $data['per_ci'], $data['travel_id'], $data['bus_id'], $data['seat_id']];
+        $sql = "insert into reserves(fecha, per_ci, travel_id, bus_id, seat_id) values(?,?,?,?,?)";
+        $parameters = [$data['fecha'], $data['per_ci'], $data['travel_id'], $data['bus_id'], $data['seat_id']];
         $response = DB::select($sql, $parameters);
         return $response;
     }
@@ -19,8 +19,8 @@ class ReservesController extends Controller
     public function actualizarReserve(Request $request)
      { 
         $data = $request -> json() -> all();
-        $sql = "update reserves set fechaReserva = ?, per_ci = ?, travel_id = ?, bus_id = ?, seat_id = ?";
-        $parameters = [$data['fechaReserva'], $data['per_ci'], $data['travel_id'], $data['bus_id'], $data['seat_id']];
+        $sql = "update reserves set fecha = ?, per_ci = ?, travel_id = ?, bus_id = ?, seat_id = ?";
+        $parameters = [$data['fecha'], $data['per_ci'], $data['travel_id'], $data['bus_id'], $data['seat_id']];
         $response = DB::select($sql, $parameters);
         return $response;
      }

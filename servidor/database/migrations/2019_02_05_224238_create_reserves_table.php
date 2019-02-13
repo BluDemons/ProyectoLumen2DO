@@ -15,7 +15,7 @@ class CreateReservesTable extends Migration
     {
         Schema::create('reserves', function (Blueprint $table) {
             $table->increments('reserve_id');
-            $table->string('fechaReserva');
+            $table->date('fecha');
             $table->string('per_ci');
             $table->foreign('per_ci')->references('per_ci')->on('persons');
             $table->integer('travel_id');
